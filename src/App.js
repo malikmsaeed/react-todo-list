@@ -41,7 +41,10 @@ export default class App extends Component {
     });
   };
   handleDelete = id => {
-    console.log(`Delte item id ${id}`);
+    const filteredItems = this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: filteredItems
+    });
   };
 
   render() {
