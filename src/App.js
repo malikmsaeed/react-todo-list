@@ -30,10 +30,15 @@ export default class App extends Component {
     });
   };
   clearList = () => {
-    console.log("cleare Item List");
+    this.setState({
+      items: []
+    });
   };
   handleEdit = id => {
-    console.log(`Edit item id ${id}`);
+    const filteredItems = this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: filteredItems
+    });
   };
   handleDelete = id => {
     console.log(`Delte item id ${id}`);
